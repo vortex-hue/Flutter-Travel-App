@@ -49,6 +49,7 @@ class _WelcomePageState extends State<WelcomePage> {
             child: Container(
               margin: const EdgeInsets.only(top: 150, right: 20, left: 20),
               child: Row(
+                mainAxisAlignment : MainAxisAlignment.spaceBetween,
                 children: [
                   Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
@@ -73,13 +74,14 @@ class _WelcomePageState extends State<WelcomePage> {
                 ),
                   // columns for the dots slide effects
                   Column(
-                    children: List.generate(3, (index){
+                    children: List.generate(3, (indexDots){
                       return Container(
+                        margin: const EdgeInsets.only(bottom: 2),
                         width: 8,
-                        height: 25,
+                        height: index==indexDots?25:8,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(8),
-                          color: AppColors.mainColor,
+                          color: index==indexDots?AppColors.mainColor:AppColors.buttonBackground,
                         ),
 
                       );
